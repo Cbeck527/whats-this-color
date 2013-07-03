@@ -18,6 +18,12 @@ def isHex(inputValue=""):
     else:
         return False
 
+def isDark(inputColor):
+    if int(inputColor,16) > 8388607:
+        return "000000"
+    else:
+        return "ffffff"
+
 
 @app.route('/')
 def hello_world():
@@ -26,8 +32,9 @@ def hello_world():
 @app.route('/<inputColor>')
 def returnColor(inputColor):
     color = isHex(inputColor)
+    textColor = isDark(inputColor)
     if color:
-        return render_template('color.html', color=color)
+        return render_template('color.html', color=color, textColor=textColor)
     else:
         return render_template('error.html')
 
@@ -44,4 +51,4 @@ def returnFavicon():
     return send_file(img_io, mimetype='image/jpeg')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", debug=True)

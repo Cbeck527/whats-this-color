@@ -4,22 +4,46 @@
     <title>{% block title %}{% endblock %}</title>
     <style>
         body {
-            color:#000000;
+            color:#{{ textColor }};
             background: #{{ color if color is defined else "#ffffff" }};
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 36px;
             font-weight: bold;
             letter-spacing: -1px;
             text-rendering: optimizelegibility;
         }
-        #{{ color }} {
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35%;
+        }
+        #color h1 {
+            font-size: 120px;
             text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        #tag {
+            position: absolute;
+            bottom:5px;
+            right:5px;
+            font-weight: normal;
+            font-size: 24px;
+        }
+        #tag > a {
+            color:#{{ textColor }};
+            text-decoration:none;
+        }
+        #tag > a:hover {
+            text-decoration:underline;
         }
     </style>
     <link rel="shortcut icon" href="/favicon.ico?color={{ color if color is defined else "ffffff" }}" />
 </head>
 <body>
-    {% block main %}
-    {% endblock %}
+    <div id="container">
+        {% block main %}
+        {% endblock %}
+    </div>
+    <div id="tag"><a href="http://whatsthiscolor.com">whatsthiscolor.com</a><br>a <a href="http://chrisbecker.info">chris becker production</a></div>
 </body>
 </html>
