@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            color:#000000;
+            background: #{{ color if color is defined else "#ffffff" }};
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            text-rendering: optimizelegibility;
+        }
+        #{{ color }} {
+            text-align: center;
+        }
+    </style>
+    <link rel="shortcut icon" href="/favicon.ico?color={{ color if color is defined else "ffffff" }}" />
+</head>
+<body>
+    {% block main %}
+    {% endblock %}
+</body>
+</html>
