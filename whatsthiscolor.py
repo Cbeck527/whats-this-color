@@ -29,7 +29,7 @@ def returnColor(inputColor):
     if color:
         return render_template('color.html', color=color)
     else:
-        return 'Not a valid hex color'
+        return render_template('error.html')
 
 @app.route('/favicon.ico')
 def returnFavicon():
