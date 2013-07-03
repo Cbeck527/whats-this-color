@@ -5,6 +5,7 @@
     <style>
         body {
             color:#{{ textColor }};
+            font-size: 36px;
             background: #{{ color if color is defined else "#ffffff" }};
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-weight: bold;
@@ -40,10 +41,8 @@
     <link rel="shortcut icon" href="/favicon.ico?color={{ color if color is defined else "ffffff" }}" />
 </head>
 <body>
-    <div id="container">
-        {% block main %}
-        {% endblock %}
-    </div>
+    {% block main %}
+    {% endblock %}
     <div id="tag"><a href="http://whatsthiscolor.com">whatsthiscolor.com</a><br>a <a href="http://chrisbecker.info">chris becker production</a></div>
 </body>
 </html>

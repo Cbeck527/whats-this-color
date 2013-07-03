@@ -32,8 +32,8 @@ def hello_world():
 @app.route('/<inputColor>')
 def returnColor(inputColor):
     color = isHex(inputColor)
-    textColor = isDark(inputColor)
     if color:
+        textColor = isDark(color)
         return render_template('color.html', color=color, textColor=textColor)
     else:
         return render_template('error.html')

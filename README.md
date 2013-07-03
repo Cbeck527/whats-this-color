@@ -12,4 +12,14 @@ e.g.
     
 It's even hand enough to change the text color if you're checking out something dark. Kudos to the PIL team for making it easy to dynamically change the favicon.
 
+To run locally, install the requirements:
+
+    pip install -r requirements.txt
+    
+run the app
+
+    python whatsthiscolor.py
+    
+and navigate to [http://localhost:5000](http://localhost:5000)!
+
 Built using Python, Flask, PIL (Python Image Library), and love <3
