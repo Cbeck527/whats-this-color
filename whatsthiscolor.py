@@ -3,6 +3,7 @@ from PIL import Image
 import StringIO
 
 app = Flask(__name__)
+app.debug = True
 
 
 def isHex(inputValue=""):
@@ -49,7 +50,7 @@ def returnFavicon():
         img_io = StringIO.StringIO()
         img.save(img_io, 'PNG')
         img_io.seek(0)
-        return send_file(img_io, mimetype='image/jpeg')
+        return send_file(img_io, mimetype='image/png')
     else:
         return ""
 

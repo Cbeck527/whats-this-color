@@ -22,4 +22,4 @@ run the app
     
 and navigate to [http://localhost:5000](http://localhost:5000)!
 
-Built using Python, Flask, PIL (Python Image Library), and love <3
+Built using Python, Flask, [Pillow](https://github.com/python-imaging/Pillow) a better PIL (Python Image Library), and love <3
