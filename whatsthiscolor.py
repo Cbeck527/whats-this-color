@@ -28,7 +28,7 @@ def isDark(inputColor):
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    return render_template('index.html', textColor="000000")
 
 @app.route('/<inputColor>')
 def returnColor(inputColor):
