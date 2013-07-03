@@ -41,14 +41,17 @@ def returnColor(inputColor):
 @app.route('/favicon.ico')
 def returnFavicon():
     color = request.args.get('color')
-    r = int(color[:2], 16)
-    g = int(color[2:4], 16)
-    b = int(color[4:6], 16)
-    img = Image.new('RGB', (16, 16), (r, g, b))
-    img_io = StringIO.StringIO()
-    img.save(img_io, 'PNG')
-    img_io.seek(0)
-    return send_file(img_io, mimetype='image/jpeg')
+    if color is not None:
+        r = int(color[:2], 16)
+        g = int(color[2:4], 16)
+        b = int(color[4:6], 16)
+        img = Image.new('RGB', (16, 16), (r, g, b))
+        img_io = StringIO.StringIO()
+        img.save(img_io, 'PNG')
+        img_io.seek(0)
+        return send_file(img_io, mimetype='image/jpeg')
+    else:
+        return ""
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
