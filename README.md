@@ -1,5 +1,8 @@
 WhatsThisColor.com
 ===
+[whatsthiscolor.com](http://whatsthiscolor.com)
+
+
 This tiny (and silly) site lets you quickly see what a color looks like without loading an annoying color picker or launching Photoshop.
 
 To use, just navigate to
